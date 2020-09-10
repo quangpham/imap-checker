@@ -1,0 +1,7 @@
+<%= @mail.html_part.nil? ? "" : @mail.html_part.html_safe %>
+<br><br>
+<% if !@mail.text_part.nil?  %>
+  <% @mail.text_part.split("\n") do |p| %>
+    <%= p %><br>
+  <% end %>
+<% end %>
