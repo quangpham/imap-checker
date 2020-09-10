@@ -27,5 +27,8 @@ class Account < ApplicationRecord
         mail_content.save
       end
     end
+
+    self.last_checked_at = Time.now
+    self.save
   end
 end
