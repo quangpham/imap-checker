@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2020_09_10_080746) do
     t.string "email"
     t.string "password"
     t.boolean "enable_ssl", default: true
+    t.datetime "last_checked_at"
+    t.integer "unread_count"
+    t.string "error"
+    t.integer "priority", default: 0
+    t.string "heroku_app_name"
+    t.index ["email"], name: "index_accounts_on_email"
+    t.index ["last_checked_at"], name: "index_accounts_on_last_checked_at"
+    t.index ["priority"], name: "index_accounts_on_priority"
   end
 
   create_table "mail_contents", force: :cascade do |t|
@@ -36,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_080746) do
     t.boolean "is_multipart"
     t.boolean "is_read"
     t.index ["account_id"], name: "index_mail_contents_on_account_id"
+    t.index ["created_at"], name: "index_mail_contents_on_created_at"
     t.index ["message_id"], name: "index_mail_contents_on_message_id"
   end
 

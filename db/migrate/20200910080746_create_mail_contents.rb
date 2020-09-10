@@ -16,5 +16,10 @@ class CreateMailContents < ActiveRecord::Migration[6.0]
 
     add_index :mail_contents, :account_id
     add_index :mail_contents, :message_id
+    add_index :mail_contents, :created_at
+
+    add_index :accounts, :last_checked_at
+    add_index :accounts, :priority
+    add_index :accounts, :email
   end
 end
