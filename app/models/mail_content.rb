@@ -1,3 +1,4 @@
 class MailContent < ApplicationRecord
-  max_paginates_per 200
+  paginates_per 200
+  # max_paginates_per 200
 end

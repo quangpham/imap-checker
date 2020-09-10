@@ -12,7 +12,6 @@
       <th>From</th>
       <th>Subject</th>
       <th>Created</th>
-      <th>Body</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -24,7 +23,6 @@
         <td><%= mail.from %></td>
         <td><%= mail.subject %></td>
         <td><%= mail.created_at.to_date %></td>
-        <td><%= mail.text_part.nil? ? "" : "#{mail.text_part.first(100)} ..." %></td>
         <td><%= link_to 'Show', mail %></td>
       </tr>
     <% end %>

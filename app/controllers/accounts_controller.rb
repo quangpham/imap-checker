@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @mails = MailContent.where(account_id: @account.id).order(created_at: :desc)
+    @mails = MailContent.where(account_id: @account.id).order(created_at: :desc).limit(100)
   end
 
   def new
