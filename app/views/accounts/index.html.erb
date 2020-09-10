@@ -2,11 +2,12 @@
 
 <h1>Accounts</h1>
 
-<table>
+<table class="tiny-table" style="width: 100%;">
   <thead>
     <tr>
       <th>Id</th>
       <th>User name</th>
+      <th>Error</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= account.id %></td>
         <td><%= account.email %> <%= account.unread_count.to_i > 0 ? "(#{account.unread_count.to_i} unread)" : "" %></td>
+        <td><%= account.error %></td>
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
       </tr>

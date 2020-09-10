@@ -37,3 +37,12 @@ class Account < ApplicationRecord
     self.save
   end
 end
+
+# File.read("a").split("\n").each do |line|
+#   arr = line.split("|")
+#   email = "#{arr[0]}@hotmail.com".downcase
+#   password = arr[2]
+#   if Account.find_by(email: email).nil?
+#     Account.create(email: email, password: password)
+#   end
+# end

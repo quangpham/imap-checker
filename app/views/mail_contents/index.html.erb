@@ -1,0 +1,28 @@
+
+<table class="tiny-table" style="width: 100%;">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>To</th>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Created</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mails.each do |mail| %>
+      <tr>
+        <td><%= mail.id %></td>
+        <td><%= mail.to %></td>
+        <td><%= mail.from %></td>
+        <td><%= mail.subject %></td>
+        <td><%= mail.created_at.to_date %></td>
+        <td><%= link_to 'Show', mail %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @mails %>
