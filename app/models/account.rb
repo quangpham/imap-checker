@@ -13,7 +13,7 @@ class Account < ApplicationRecord
     if res[:results]
       res[:results].each do |r|
         if MailContent.find_by(message_id: r[:message_id]).nil?
-          MailContent.create(r)
+          MailContent.create(r.merge(account_id: self.id))
         end
       end
       self.update(last_checked_at: Time.now) if !res[:results].empty?
