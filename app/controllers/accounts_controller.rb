@@ -1,8 +1,9 @@
 class AccountsController < ApplicationController
-  before_action :set_account, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_account, only: [:show, :edit, :update, :destroy, :check_mail]
 
   def index
-    @accounts = Account.order(:error).order(:id)
+    @accounts = Account.where(error: nil).where.not(last_checked_at: nil).order(:error).order(:id)
   end
 
   def show
@@ -30,6 +31,10 @@ class AccountsController < ApplicationController
   def destroy
     @account.destroy
     redirect_to accounts_url, notice: 'Account was successfully destroyed.'
+  end
+
+  def check_mail
+
   end
 
   private

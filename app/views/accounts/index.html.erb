@@ -7,7 +7,7 @@
     <tr>
       <th>Id</th>
       <th>User name</th>
-      <th>Error</th>
+      <th>Last check</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= account.id %></td>
         <td><%= account.email %> <%= account.unread_count.to_i > 0 ? "(#{account.unread_count.to_i} unread)" : "" %></td>
-        <td><%= account.error %></td>
+        <td><%= account.last_checked_at %></td>
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
       </tr>
