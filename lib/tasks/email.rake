@@ -1,7 +1,7 @@
 namespace :email do
 
   task :check => :environment do
-    5.times {
+    1.times {
       if account = Account.where(last_checked_at: nil, error: nil).first
         account.check_mail()
       elsif account = Account.where(error: nil).order(:last_checked_at).first
