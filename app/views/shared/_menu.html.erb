@@ -1,0 +1,23 @@
+<table class="tiny-table" style="width: 100%;">
+  <tbody>
+    <tr>
+      <td>
+        Menu:
+
+        <% if user_signed_in? %>
+          <%= link_to 'Accounts', accounts_path %>
+          <%= link_to 'All mails', mail_contents_path %>
+        <% end %>
+      </td>
+      <td style="text-align: right;">
+        <% if user_signed_in? %>
+          <%= current_user.name || current_user.email %><br>
+          <%#= link_to "Change your password", edit_user_registration_path %>
+          <%#= link_to "Change password", settings_change_password_path %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <% end %>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

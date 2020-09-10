@@ -1,3 +1,5 @@
+<%= render "shared/menu"%>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,10 +10,9 @@
 <table class="tiny-table" style="width: 100%;">
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Created</th>
       <th>From</th>
       <th>Subject</th>
-      <th>Created</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -19,10 +20,9 @@
   <tbody>
     <% @mails.each do |mail| %>
       <tr>
-        <td><%= mail.id %></td>
+        <td><%= mail.created_at %></td>
         <td><%= mail.from %></td>
         <td><%= mail.subject %></td>
-        <td><%= mail.created_at.to_date %></td>
         <td><%= link_to 'Show', mail %></td>
       </tr>
     <% end %>
