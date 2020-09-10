@@ -1,0 +1,76 @@
+
+table.tiny-table {
+  th {
+    text-align: left;
+  }
+  td {
+    padding: 0 3px 0px;
+    vertical-align: top;
+  }
+
+  tbody {
+    tr {
+
+      td {
+        border-bottom: 1px dashed #bbb;
+        max-width: 300px;
+      }
+    }
+
+    tr:nth-child(even) {background: #f7f7f7}
+    tr:nth-child(odd) {background: #FFF}
+
+    tr:hover {background: #c1c1c1}
+  }
+}
+
+.small {
+  td {font-size: 11px;}
+}
+
+.float_left_33 {
+  width:33%;
+  float:left;
+  p {
+    font-size: 10px;
+  }
+}
+
+.float_left_20 {
+  width:19%;
+  float:left;
+  p {
+    font-size: 10px;
+  }
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+a.no-decoration {
+  text-decoration: none;
+}
+
+table.filter-table {
+  th {
+    text-align: left;
+  }
+  td {
+    padding: 0 3px 0px;
+    vertical-align: top;
+  }
+
+  tbody {
+    tr {
+      td {
+        // border-bottom: 1px dashed #bbb;
+        // max-width: 250px;
+      }
+    }
+  }
+}
+
+.icon_img img{
+  width: 50px;
+}

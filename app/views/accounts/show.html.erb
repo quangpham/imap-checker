@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @account.email %>
+</p>
+
+<table class="tiny-table" style="width: 100%;">
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Created</th>
+      <th>Body</th>
+      <th>Html</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mails.each do |mail| %>
+      <tr>
+        <td><%= mail.from %></td>
+        <td><%= mail.subject %></td>
+        <td><%= mail.created_at.to_date %></td>
+        <td><%= mail.text_part.nil? ? "" : "#{mail.text_part.first(100)} ..." %></td>
+        <td><%#= mail.html_part.nil? ? "" : ActionView::Base.full_sanitizer.sanitize(mail.html_part) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

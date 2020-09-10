@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: IMAP_Checker_development
+  # database: IMAP_Checker_development
+  gssencmode: disable
+  url: postgres://gjefoeooxuyvkk:b3a55d7b739a7d12bacf25527ea7bbe1fb39165683d481d23dcea8b128ab27c1@ec2-52-44-55-63.compute-1.amazonaws.com:5432/d804654dc6a5rv
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
