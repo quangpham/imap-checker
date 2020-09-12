@@ -16,11 +16,8 @@ ActiveRecord::Schema.define(version: 2020_09_10_080746) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "address", default: "outlook.office365.com"
-    t.integer "port", default: 993
     t.string "email"
     t.string "password"
-    t.boolean "enable_ssl", default: true
     t.datetime "last_checked_at"
     t.integer "unread_count"
     t.string "error"
